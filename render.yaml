@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: oboe-backend
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    repo: https://github.com/LiLQD/OboeProject
+    dockerfilePath: ./backend/Oboe/Dockerfile
+    dockerContext: ./backend/Oboe
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: SPRING_JPA_DDL_AUTO
+        value: none
+      - key: DOMAIN
+        value: https://oboe-backend.onrender.com
