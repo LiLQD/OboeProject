@@ -141,9 +141,11 @@
 
                 return ResponseEntity.ok(response);
 
-            } catch (Exception e) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
-            }
+		} catch (Exception e) {
+    System.err.println("LOGIN FAILED user=" + username + " : " + e.getClass().getName() + " -> " + e.getMessage());
+    e.printStackTrace();
+    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+}
         }
 
         @PutMapping("/updateProfile")
