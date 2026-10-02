@@ -150,7 +150,9 @@ public class WebConfig {
                 "http://localhost:5173",  // vite dev server default
                 "http://localhost:5175",  // current vite dev server port
                 "https://oboeru.me",       // production domain
-		"https://oboe-backend.onrender.com"
+		"https://oboe-backend.onrender.com",
+        "https://oboe-frontend-7swe5jobv-lilqds-projects.vercel.app",
+        "https://oboe-frontend.vercel.app"
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With"));
