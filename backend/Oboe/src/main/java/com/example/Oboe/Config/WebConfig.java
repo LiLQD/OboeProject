@@ -149,7 +149,7 @@ public class WebConfig {
                 "http://localhost:3000",  // local dev
                 "http://localhost:5173",  // vite dev server default
                 "http://localhost:5175",  // current vite dev server port
-                "https://oboeru.me"       // production domain
+                "https://oboeru.me",       // production domain
 		"https://oboe-backend.onrender.com"
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
