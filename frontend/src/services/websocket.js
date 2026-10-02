@@ -7,7 +7,8 @@ let onNotificationCallback = null;
 
 function connect(id) {
   userId = id;
-  const wsUrl = `wss://oboeru.me/ws-raw?userId=${userId}`;
+  const wsBase = import.meta.env.VITE_WEBSOCKET_URL || 'wss://oboeru.me/ws-raw';
+  const wsUrl = `${wsBase}?userId=${userId}`;
   socket = new WebSocket(wsUrl);
 
   socket.onopen = () => {

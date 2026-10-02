@@ -2,15 +2,17 @@
 import axios from 'axios';
 import { useRouter } from 'vue-router';
 
-// Determine base URL based on environment
 const getBaseURL = () => {
+  // Prefer explicit env var (set on Vercel)
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL;
+  }
   if (import.meta.env.DEV) {
     // Development: use Vite proxy
     return '';
-  } else {
-    // Production: use full domain
-    return 'https://oboeru.me/';
   }
+  // Fallback: legacy production domain
+  return 'https://oboeru.me/';
 };
 
 const instance = axios.create({
