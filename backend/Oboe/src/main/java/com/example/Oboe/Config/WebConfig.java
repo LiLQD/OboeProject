@@ -89,6 +89,7 @@ public class WebConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+				"/actuator/**",
                                 "/api/auth/signup",
                                 "/api/auth/login",
                                 "/api/auth/loginWithFirebase",
@@ -149,6 +150,7 @@ public class WebConfig {
                 "http://localhost:5173",  // vite dev server default
                 "http://localhost:5175",  // current vite dev server port
                 "https://oboeru.me"       // production domain
+		"https://oboe-backend.onrender.com"
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With"));
